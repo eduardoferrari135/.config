@@ -190,13 +190,9 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
-    'ellisonleao/gruvbox.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'gruvbox'
-    end,
+    "catppuccin/nvim", name = "catppuccin", priority = 1000
   },
+
 
   {
     -- Set lualine as statusline
@@ -205,7 +201,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'gruvbox',
+        theme = 'catppucin',
         component_separators = '|',
         section_separators = '',
       },
@@ -272,6 +268,12 @@ require('lazy').setup({
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
+vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+
+require("catppuccin").setup()
+
+vim.cmd [[colorscheme catppuccin]]
+
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 
@@ -665,4 +667,11 @@ cmp.setup {
 }
 
 -- Custom mappings
+require('leap').create_default_mappings()
+
 vim.keymap.set('n', '<leader>jr', ':w<CR>:! javac % && java %<<CR>', { desc = 'Run and Compile Java file' })
+vim.keymap.set('n', '<leader>v', ':vnew<CR><C-w>r')
+vim.keymap.set('n', '<C-h>', '<C-w>h')
+vim.keymap.set('n', '<C-j>', '<C-w>j')
+vim.keymap.set('n', '<C-k>', '<C-w>k')
+vim.keymap.set('n', '<C-l>', '<C-w>l')
