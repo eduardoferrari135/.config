@@ -35,7 +35,7 @@ do
 done
 
 space_creator=(
-  icon=􀆊
+  icon=
   icon.font="$FONT:Heavy:16.0"
   padding_left=10
   padding_right=8
