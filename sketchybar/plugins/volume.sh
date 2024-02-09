@@ -2,6 +2,10 @@
 
 WIDTH=100
 
+is_bt_headphones_connected() {
+  return $(blueutil --is-connected 94:DB:56:70:97:DE)
+}
+
 volume_change() {
   source "$CONFIG_DIR/icons.sh"
   case $INFO in
@@ -15,8 +19,12 @@ volume_change() {
     ;;
     0) ICON=$VOLUME_0
     ;;
-    *) ICON=$VOLUME_100
+    *) ICON="􀑈 "  
   esac
+
+if is_bt_headphones_connected; then
+ #   ICON="􀑈 "
+  fi
 
   sketchybar --set volume_icon label=$ICON \
              --set $NAME slider.percentage=$INFO
