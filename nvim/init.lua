@@ -1,4 +1,4 @@
---[[
+--[[init
 
 =====================================================================
 ==================== READ THIS BEFORE CONTINUING ====================
@@ -113,7 +113,7 @@ require('lazy').setup({
     },
 
     -- Useful plugin to show you pending keybinds.
-    { 'folke/which-key.nvim',  opts = {} },
+    { 'folke/which-key.nvim',     opts = {} },
     {
         -- Adds git related signs to the gutter, as well as utilities for managing changes
         'lewis6991/gitsigns.nvim',
@@ -190,9 +190,10 @@ require('lazy').setup({
     },
 
     {
-        "catppuccin/nvim", name = "catppuccin", priority = 1000
+        "catppuccin/nvim", name = "catppuccin"
     },
 
+    { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
 
     {
         -- Set lualine as statusline
@@ -218,7 +219,7 @@ require('lazy').setup({
     },
 
     -- "gc" to comment visual regions/lines
-    { 'numToStr/Comment.nvim', opts = {} },
+    { 'numToStr/Comment.nvim',  opts = {} },
 
     -- Fuzzy Finder (files, lsp, etc)
     {
@@ -272,7 +273,7 @@ vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
 
 require("catppuccin").setup()
 
-vim.cmd [[colorscheme catppuccin]]
+vim.cmd([[colorscheme catppuccin]])
 
 vim.o.relativenumber = true
 
@@ -354,6 +355,11 @@ require('telescope').setup {
             },
         },
     },
+    pickers = {
+        colorscheme = {
+            enable_preview = true
+        }
+    }
 }
 
 -- Enable telescope fzf native, if installed
@@ -674,6 +680,7 @@ require('leap').create_default_mappings()
 vim.keymap.set('n', '<leader>jr', ':w<CR>:! javac % && java %<<CR>', { desc = 'Run and Compile Java file' })
 vim.keymap.set('n', '<leader>py', ':w<CR>:! python3 %', { desc = 'Run Python File' })
 vim.keymap.set('n', '<leader>v', ':vnew<CR><C-w>r')
+vim.keymap.set('n', '<leader>cs', ':Telescope colorscheme<CR>', { desc = 'Change Colorscheme' })
 vim.keymap.set('n', '<C-h>', '<C-w>h')
 vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
