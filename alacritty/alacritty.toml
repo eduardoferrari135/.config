@@ -58,7 +58,7 @@ program = "/bin/zsh"
 [window]
 decorations = "None"
 dynamic_title = true
-startup_mode = "Windowed"
+startup_mode = "Maximized"
 
 [window.dimensions]
 columns = 160

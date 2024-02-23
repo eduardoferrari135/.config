@@ -678,6 +678,9 @@ cmp.setup {
 require('leap').create_default_mappings()
 
 vim.keymap.set('n', '<leader>jr', ':w<CR>:! javac % && java %<<CR>', { desc = 'Run and Compile Java file' })
+vim.keymap.set('n', '<leader>ja', ':w<CR>:! javac % && java %< ',
+    { desc = 'Run and Compile Java file with args' })
+vim.keymap.set('n', '<leader>jc', ':w<CR>:! javac % <CR>', { desc = 'Compile Java file' })
 vim.keymap.set('n', '<leader>py', ':w<CR>:! python3 %', { desc = 'Run Python File' })
 vim.keymap.set('n', '<leader>v', ':vnew<CR><C-w>r')
 vim.keymap.set('n', '<leader>cs', ':Telescope colorscheme<CR>', { desc = 'Change Colorscheme' })
