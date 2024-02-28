@@ -202,7 +202,7 @@ require('lazy').setup({
         opts = {
             options = {
                 icons_enabled = false,
-                theme = 'catppuccin',
+                theme = 'gruvbox',
                 component_separators = '|',
                 section_separators = '',
             },
@@ -273,7 +273,7 @@ vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
 
 require("catppuccin").setup()
 
-vim.cmd([[colorscheme catppuccin]])
+vim.cmd([[colorscheme gruvbox]])
 
 vim.o.relativenumber = true
 
