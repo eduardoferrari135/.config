@@ -273,6 +273,8 @@ vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
 
 require("catppuccin").setup()
 
+vim.g.gruvbox_material_background = 'hard'
+vim.g.gruvbox_material_diagnostic_virtual_text = 'highlighted'
 vim.cmd([[colorscheme gruvbox-material]])
 
 vim.o.relativenumber = true
