@@ -202,7 +202,7 @@ require('lazy').setup({
         opts = {
             options = {
                 icons_enabled = false,
-                theme = 'gruvbox',
+                theme = 'gruvbox-material',
                 component_separators = '|',
                 section_separators = '',
             },
@@ -273,7 +273,7 @@ vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
 
 require("catppuccin").setup()
 
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[colorscheme gruvbox-material]])
 
 vim.o.relativenumber = true
 
@@ -688,3 +688,15 @@ vim.keymap.set('n', '<C-h>', '<C-w>h')
 vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
+
+local programming_filetypes = { "js", "ts", "jsx", "tsx", "py", "java", "cpp", "c", "h", "go", "rust", "rs", "php",
+    "html", "css", "scss", "rb", "sh" }
+
+vim.api.nvim_create_augroup("AutoSaveAndReload", { clear = true })
+for _, ext in ipairs(programming_filetypes) do
+    vim.api.nvim_create_autocmd("BufNewFile", {
+        pattern = "*." .. ext,
+        command = "silent! if !isdirectory(expand('%:p:h')) | call mkdir(expand('%:p:h'), 'p') | endif | write | edit",
+        group = "AutoSaveAndReload",
+    })
+end

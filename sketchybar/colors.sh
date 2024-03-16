@@ -16,19 +16,36 @@
 # export BG2=0xff414550
 
 ### Gruvbox
-export BLACK=0xff282828
-export WHITE=0xfffbf1c7
+# export BLACK=0xff282828
+# export WHITE=0xfffbf1c7
+# export RED=0xfffb4934
+# export GREEN=0xffb8bb26
+# export BLUE=0xff83a598
+# export YELLOW=0xfffabd2f
+# export ORANGE=0xfffe8019
+# export MAGENTA=0xffd3869b
+# export GREY=0xff928374
+# export TRANSPARENT=0x00000000
+# export BG0=0xff282828
+# export BG1=0xff3c3836
+# export BG2=0xff504945
+
+# Gruvbox Material
+
+export BLACK=0xff1d2021
 export RED=0xfffb4934
 export GREEN=0xffb8bb26
-export BLUE=0xff83a598
 export YELLOW=0xfffabd2f
-export ORANGE=0xfffe8019
+export BLUE=0xff83a598
 export MAGENTA=0xffd3869b
-export GREY=0xff928374
+export CYAN=0xff8ec07c
+export WHITE=0xffebdbb2
+export GREY=0xff7c6f64
 export TRANSPARENT=0x00000000
-export BG0=0xff282828
-export BG1=0xff3c3836
-export BG2=0xff504945
+export BG0=0xff1d2021
+export BG1=0xff282828
+export BG2=0xff282828
+
 
 ### Catppuccin
 # export BLACK=0xff181926
