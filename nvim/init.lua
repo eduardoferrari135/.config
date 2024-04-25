@@ -583,7 +583,18 @@ require('mason-lspconfig').setup()
 local servers = {
     clangd = {},
     pyright = {},
-    rust_analyzer = {},
+    rust_analyzer = {
+        settings = {
+            ["rust-analyzer"] = {
+                cargo = {
+                    allFeatures = true,
+                },
+                checkOnSave = {
+                    command = "clippy",
+                },
+            },
+        },
+    },
     tsserver = {},
     jdtls = {},
     html = { filetypes = { 'html', 'twig', 'hbs' } },
@@ -672,15 +683,17 @@ cmp.setup {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
+        { name = 'crates' },
     },
 }
 
 -- Custom mappings
 require('leap').create_default_mappings()
 
-vim.keymap.set('n', '<leader>jr', ':w<CR>:! javac % && java %<<CR>', { desc = 'Run and Compile Java file' })
-vim.keymap.set('n', '<leader>ja', ':w<CR>:! javac % && java %< ',
-    { desc = 'Run and Compile Java file with args' })
+vim.keymap.set('n', '<leader>jr', ':w<CR>:! javac % && java %<<CR>', { desc = 'Compile and run Java file' })
+vim.keymap.set('n', '<leader>rs', ':w<CR>:! cargo build && cargo run<CR>', { desc = 'Cargo build and run' })
+vim.keymap.set('n', '<leader>rs', ':w<CR>:! rustc % && ./%<<CR>', { desc = 'Compile and run Rust file' })
+vim.keymap.set('n', '<leader>ja', ':w<CR>:! javac % && java %< ', { desc = 'Compile and run Java file with args' })
 vim.keymap.set('n', '<leader>jc', ':w<CR>:! javac % <CR>', { desc = 'Compile Java file' })
 vim.keymap.set('n', '<leader>py', ':w<CR>:! python3 %', { desc = 'Run Python File' })
 vim.keymap.set('n', '<leader>v', ':vnew<CR><C-w>r')

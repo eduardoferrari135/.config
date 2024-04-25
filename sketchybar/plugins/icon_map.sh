@@ -155,7 +155,7 @@ function icon_map() {
   "Hyper")
     icon_result=":hyper:"
     ;;
-  "WhatsApp (old)")
+  "WhatsApp")
     icon_result=":whats_app:"
     ;;
   "카카오톡")

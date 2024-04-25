@@ -34,7 +34,7 @@ then
        APP=$(echo ${APPS_ARR[j]} | sed 's/"//g')
        TITLE=$(echo ${TITLES_ARR[j]} | sed 's/"//g')
  
-       ICON=$($HOME/.config/sketchybar/plugins/app_icon.sh "$APP" "$TITLE")
+       ICON=$($HOME/.config/sketchybar/plugins/app_icon.sh $APP "$TITLE")
        LABEL+="$ICON"
        if [[ $j < $(($LENGTH-1)) ]]; then
          LABEL+=" "

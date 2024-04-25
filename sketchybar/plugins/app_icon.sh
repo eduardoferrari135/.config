@@ -422,7 +422,7 @@ function icon_map() {
   "Nova")
     icon_result=":nova:"
     ;;
-  "WhatsApp (old)")
+  "WhatsApp")
     icon_result=":whats_app:"
     ;;
   *)
