@@ -549,24 +549,6 @@ local on_attach = function(_, bufnr)
     end, { desc = 'Format current buffer with LSP' })
 end
 
--- document existing key chains
-require('which-key').register {
-    ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-    ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-    ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
-    ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
-    ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-    ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-    ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
-    ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-}
--- register which-key VISUAL mode
--- required for visual <leader>hs (hunk stage) to work
-require('which-key').register({
-    ['<leader>'] = { name = 'VISUAL <leader>' },
-    ['<leader>h'] = { 'Git [H]unk' },
-}, { mode = 'v' })
-
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
 require('mason').setup()
@@ -697,11 +679,28 @@ vim.keymap.set('n', '<leader>ja', ':w<CR>:! javac % && java %< ', { desc = 'Comp
 vim.keymap.set('n', '<leader>jc', ':w<CR>:! javac % <CR>', { desc = 'Compile Java file' })
 vim.keymap.set('n', '<leader>py', ':w<CR>:! python3 %', { desc = 'Run Python File' })
 vim.keymap.set('n', '<leader>v', ':vnew<CR><C-w>r')
-vim.keymap.set('n', '<leader>cs', ':Telescope colorscheme<CR>', { desc = 'Change Colorscheme' })
+
+-- Change tab
 vim.keymap.set('n', '<C-h>', '<C-w>h')
 vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
+
+-- Lsp Mappings
+vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename variables' })
+vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, { desc = 'Get definition' })
+vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, { desc = 'Get references' })
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code action' })
+
+-- Nvim-tree
+vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')
+
+
+-- Remap original 'S' functionality (normal mode)
+vim.api.nvim_set_keymap('n', '<leader>S', 'cc', { noremap = true, silent = true })
+
+-- Remap original 'S' functionality (visual mode)
+vim.api.nvim_set_keymap('v', '<leader>s', 'c', { noremap = true, silent = true })
 
 local programming_filetypes = { "js", "ts", "jsx", "tsx", "py", "java", "cpp", "c", "h", "go", "rust", "rs", "php",
     "html", "css", "scss", "rb", "sh" }
