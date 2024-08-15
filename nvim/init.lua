@@ -436,7 +436,7 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 vim.defer_fn(function()
     require('nvim-treesitter.configs').setup {
         -- Add languages to be installed here that you want installed for treesitter
-        ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
+        ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash', 'requirements', 'c_sharp' },
 
         -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
         auto_install = false,
@@ -589,6 +589,7 @@ local servers = {
             -- diagnostics = { disable = { 'missing-fields' } },
         },
     },
+    omnisharp = {},
 }
 
 -- Setup neovim lua configuration
@@ -703,7 +704,7 @@ vim.api.nvim_set_keymap('n', '<leader>S', 'cc', { noremap = true, silent = true 
 vim.api.nvim_set_keymap('v', '<leader>s', 'c', { noremap = true, silent = true })
 
 local programming_filetypes = { "js", "ts", "jsx", "tsx", "py", "java", "cpp", "c", "h", "go", "rust", "rs", "php",
-    "html", "css", "scss", "rb", "sh" }
+    "html", "css", "scss", "rb", "sh", "cs" }
 
 vim.api.nvim_create_augroup("AutoSaveAndReload", { clear = true })
 for _, ext in ipairs(programming_filetypes) do
@@ -713,3 +714,13 @@ for _, ext in ipairs(programming_filetypes) do
         group = "AutoSaveAndReload",
     })
 end
+
+
+-- Enable spell checking for Markdown files with English and Portuguese languages
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "markdown",
+    callback = function()
+        vim.opt_local.spell = true
+        vim.opt_local.spelllang = "en_us,pt_br"
+    end,
+})
