@@ -704,7 +704,7 @@ vim.api.nvim_set_keymap('n', '<leader>S', 'cc', { noremap = true, silent = true 
 vim.api.nvim_set_keymap('v', '<leader>s', 'c', { noremap = true, silent = true })
 
 local programming_filetypes = { "js", "ts", "jsx", "tsx", "py", "java", "cpp", "c", "h", "go", "rust", "rs", "php",
-    "html", "css", "scss", "rb", "sh", "cs" }
+    "html", "css", "scss", "rb", "sh" }
 
 vim.api.nvim_create_augroup("AutoSaveAndReload", { clear = true })
 for _, ext in ipairs(programming_filetypes) do
