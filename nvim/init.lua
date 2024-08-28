@@ -563,8 +563,8 @@ require('mason-lspconfig').setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-    clangd = {},
     pyright = {},
+    clangd = {},
     rust_analyzer = {
         settings = {
             ["rust-analyzer"] = {
@@ -589,7 +589,6 @@ local servers = {
             -- diagnostics = { disable = { 'missing-fields' } },
         },
     },
-    omnisharp = {},
 }
 
 -- Setup neovim lua configuration
@@ -616,6 +615,37 @@ mason_lspconfig.setup_handlers {
         }
     end,
 }
+
+local function get_python_path()
+    -- First, try to get the Python interpreter from the active `pyenv` environment
+    local pyenv_python = vim.fn.systemlist("pyenv which python")[1]
+    if vim.v.shell_error == 0 then
+        return pyenv_python
+    end
+
+    -- If `pyenv` is not active, check for a standard virtual environment
+    local venv = os.getenv("VIRTUAL_ENV")
+    if venv then
+        return venv .. "/bin/python"
+    end
+
+    -- Fallback to using the system's Python interpreter
+    return vim.fn.exepath("python")
+end
+
+require('lspconfig').pyright.setup {
+    settings = {
+        python = {
+            pythonPath = get_python_path(),
+            analysis = {
+                typeCheckingMode = "basic", -- Adjust based on preference ("strict", "basic", "off")
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+            },
+        },
+    },
+}
+
 
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
@@ -703,17 +733,17 @@ vim.api.nvim_set_keymap('n', '<leader>S', 'cc', { noremap = true, silent = true 
 -- Remap original 'S' functionality (visual mode)
 vim.api.nvim_set_keymap('v', '<leader>s', 'c', { noremap = true, silent = true })
 
-local programming_filetypes = { "js", "ts", "jsx", "tsx", "py", "java", "cpp", "c", "h", "go", "rust", "rs", "php",
-    "html", "css", "scss", "rb", "sh" }
+-- Create an augroup to manage autocmds related to formatting
+vim.api.nvim_create_augroup("AutoFormat", { clear = true })
 
-vim.api.nvim_create_augroup("AutoSaveAndReload", { clear = true })
-for _, ext in ipairs(programming_filetypes) do
-    vim.api.nvim_create_autocmd("BufNewFile", {
-        pattern = "*." .. ext,
-        command = "silent! if !isdirectory(expand('%:p:h')) | call mkdir(expand('%:p:h'), 'p') | endif | write | edit",
-        group = "AutoSaveAndReload",
-    })
-end
+-- Define the autocmd to run :Format on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+    group = "AutoFormat",
+    pattern = "*",           -- You can specify filetypes here if you want it for specific languages, e.g., "*.cs" for C#
+    callback = function()
+        vim.lsp.buf.format() -- This calls the LSP's format function
+    end,
+})
 
 
 -- Enable spell checking for Markdown files with English and Portuguese languages
