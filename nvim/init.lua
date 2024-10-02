@@ -565,6 +565,8 @@ require('mason-lspconfig').setup()
 local servers = {
     pyright = {},
     clangd = {},
+    gopls = {},
+    csharp_ls = {},
     rust_analyzer = {
         settings = {
             ["rust-analyzer"] = {
