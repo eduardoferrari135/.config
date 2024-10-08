@@ -1,9 +1,0 @@
-[14:30:39 2024-02-03] FETCHING Version 2.31.0
-[14:30:39 2024-02-03] CREATING /Users/eduardo/.spicetify
-[14:30:39 2024-02-03] DOWNLOADING https://github.com/spicetify/spicetify-cli/releases/download/v2.31.0/spicetify-2.31.0-darwin-arm64.tar.gz
-[14:30:42 2024-02-03] EXTRACTING /Users/eduardo/.spicetify/spicetify.tar.gz
-[14:30:42 2024-02-03] SETTING EXECUTABLE PERMISSIONS TO /Users/eduardo/.spicetify/spicetify
-[14:30:42 2024-02-03] REMOVING /Users/eduardo/.spicetify/spicetify.tar.gz
-[14:30:42 2024-02-03] spicetify path already set in /Users/eduardo/.zshrc, continuing...
-[14:30:42 2024-02-03] spicetify v2.31.0 was installed successfully to /Users/eduardo/.spicetify
-[14:30:42 2024-02-03] Run 'spicetify --help' to get started
