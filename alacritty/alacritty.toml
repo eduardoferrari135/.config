@@ -1,8 +1,8 @@
-live_config_reload = true
 
-import = [
+general.import = [
     "~/.config/alacritty/themes/themes/gruvbox_material_medium_dark.toml"
 ]
+general.live_config_reload = true
 
 [bell]
 animation = "EaseOutExpo"
@@ -52,7 +52,7 @@ mouse = "Middle"
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 
-[shell]
+[terminal.shell]
 program = "/bin/zsh"
 
 [window]
@@ -74,5 +74,3 @@ bindings = [
 { key = "Left", mods = "Alt", chars = "\u001bb" },
 { key = "Right", mods = "Alt", chars = "\u001bf" },
 ]
-
-
