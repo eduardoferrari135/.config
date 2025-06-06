@@ -1,0 +1,11 @@
+# Font configuration
+font-family = "JetBrainsMono Nerd Font"
+font-size = 19
+font-thicken = true
+font-feature = -calt
+
+# Cursor and text behavior
+bold-is-bright = true
+window-decoration = none
+
+background = #1f2122
