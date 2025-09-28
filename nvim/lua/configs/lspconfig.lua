@@ -3,14 +3,15 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 
 local servers = {
-  "html",     -- For HTML
-  "cssls",    -- For CSS
+  "html", -- For HTML
+  "cssls", -- For CSS
   "ts_ls", -- For JavaScript and TypeScript
-  "jdtls",    -- For Java
+  "jdtls", -- For Java
   "kotlin_language_server", -- For Kotlin
-  "gopls",    -- For Go
-  "pyright",  -- For Python
+  "gopls", -- For Go
+  "pyright", -- For Python
   "rust_analyzer", -- For Rust
+  "clangd",
 }
 local nvlsp = require "nvchad.configs.lspconfig"
 
