@@ -1,16 +1,40 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palette": {
-    "blue": "#83a598",
-    "cyan": "#92b387",
-    "green": "#b8bb26",
-    "orange": "#fe8019",
-    "os": "#ACB0BE",
-    "purple": "#d3869b",
-    "red": "#fb4934",
-    "text": "#1d1f20",
-    "wight": "#FFFFFF",
-    "yellow": "#fabd2f"
+    "bg_dim": "#141617",
+    "bg0": "#1D2021",
+    "bg1": "#282828",
+    "bg2": "#282828",
+    "bg3": "#3C3836",
+    "bg4": "#3C3836",
+    "bg5": "#504945",
+    "bg_diff_red": "#3C1F1E",
+    "bg_diff_green": "#32361A",
+    "bg_diff_blue": "#0D3138",
+    "bg_statusline1": "#282828",
+    "bg_statusline2": "#32302F",
+    "bg_statusline3": "#504945",
+    "bg_current_word": "#32302F",
+    "bg_visual_red": "#442E2D",
+    "bg_visual_green": "#333E34",
+    "bg_visual_blue": "#2E3B3B",
+    "bg_visual_yellow": "#473C29",
+    "bg_visual_purple": "#3C333B",
+    "fg0": "#D4BE98",
+    "fg1": "#DDC7A1",
+    "red": "#EA6962",
+    "green": "#A9B665",
+    "blue": "#7DAEA3",
+    "yellow": "#D8A657",
+    "purple": "#D3869B",
+    "orange": "#E78A4E",
+    "aqua": "#89B482",
+    "bg_red": "#EA6962",
+    "bg_green": "#A9B665",
+    "bg_yellow": "#D8A657",
+    "grey0": "#7C6F64",
+    "grey1": "#928374",
+    "grey2": "#A89984"
   },
   "blocks": [
     {
@@ -22,8 +46,8 @@
             "cache_duration": "none"
           },
           "template": " {{.Icon}} ",
-          "foreground": "p:wight",
-          "background": "p:blue",
+          "foreground": "p:bg0",
+          "background": "p:aqua",
           "type": "os"
         },
         {
@@ -31,9 +55,9 @@
             "cache_duration": "none"
           },
           "template": "{{ .UserName }}@{{ .HostName }} ",
-          "foreground": "p:text",
+          "foreground": "p:bg0",
           "powerline_symbol": "\ue0b0",
-          "background": "p:blue",
+          "background": "p:aqua",
           "type": "session",
           "style": "diamond"
         },
@@ -45,9 +69,9 @@
             "style": "agnoster"
           },
           "template": " {{ .Path }} ",
-          "foreground": "p:text",
+          "foreground": "p:bg0",
           "powerline_symbol": "\ue0b0",
-          "background": "p:orange",
+          "background": "p:red",
           "type": "path",
           "style": "powerline"
         },
@@ -66,7 +90,7 @@
             "tag_icon": "\uf412 "
           },
           "template": " {{ .HEAD }} {{if .BranchStatus }} {{ .BranchStatus }} {{ end }}{{ if .Working.Changed }} {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} {{ .StashCount }}{{ end }}",
-          "foreground": "p:text",
+          "foreground": "p:bg0",
           "powerline_symbol": "\ue0b0",
           "background": "p:green",
           "type": "git",
@@ -74,8 +98,8 @@
           "background_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}p:yellow{{ end }}",
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:yellow{{ end }}",
-            "{{ if gt .Ahead 0 }}p:cyan{{ end }}",
-            "{{ if gt .Behind 0 }}p:cyan{{ end }}"
+            "{{ if gt .Ahead 0 }}p:purple{{ end }}",
+            "{{ if gt .Behind 0 }}p:purple{{ end }}"
           ]
         },
         {
@@ -85,7 +109,7 @@
             "fetch_virtual_env": true
           },
           "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}{{ if .Venv }} ({{ .Venv }}){{ end }} ",
-          "foreground": "p:text",
+          "foreground": "p:bg0",
           "powerline_symbol": "\ue0b0",
           "background": "p:yellow",
           "type": "python",
@@ -96,7 +120,7 @@
             "cache_duration": "none"
           },
           "template": " \ue77f {{ .Full }} ",
-          "foreground": "p:text",
+          "foreground": "p:bg0",
           "powerline_symbol": "\ue0b0",
           "background": "p:purple",
           "type": "dotnet",
@@ -106,8 +130,8 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": " \udb81\udfd3  {{ .Full }} ",
-          "foreground": "p:text",
+          "template": " \udb81\udfd3  {{ .Full }} ",
+          "foreground": "p:bg0",
           "powerline_symbol": "\ue0b0",
           "background": "p:blue",
           "type": "go",
@@ -118,7 +142,7 @@
             "cache_duration": "none"
           },
           "template": " \ue755 {{ .Full }} ",
-          "foreground": "p:text",
+          "foreground": "p:bg0",
           "powerline_symbol": "\ue0b0",
           "background": "p:orange",
           "type": "swift",

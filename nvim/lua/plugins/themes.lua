@@ -5,12 +5,27 @@ return {
 		-- 	vim.g.gruvbox_material_foreground = "mix"
 		-- end,
 	},
+	{
+		"shaunsingh/nord.nvim",
+	},
+	{
+		"AlexvZyl/nordic.nvim",
+	},
+	{
+		"sainnhe/everforest",
+	},
+	{
+		"rebelot/kanagawa.nvim",
+	},
+	{
+		"catppuccin/nvim",
+	},
 
 	-- Configure LazyVim to load gruvbox
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "gruvbox-material",
+			colorscheme = "catppuccin-macchiato",
 		},
 	},
 }
