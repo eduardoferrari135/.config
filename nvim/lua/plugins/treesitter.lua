@@ -21,5 +21,6 @@ return {
 			-- "css",
 			-- "java",
 		},
+		indent = { enable = true },
 	},
 }

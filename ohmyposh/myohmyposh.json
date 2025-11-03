@@ -89,7 +89,7 @@
             "revert_icon": "\uf0e2 ",
             "tag_icon": "\uf412 "
           },
-          "template": " {{ .HEAD }} {{if .BranchStatus }} {{ .BranchStatus }} {{ end }}{{ if .Working.Changed }} {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} {{ .StashCount }}{{ end }}",
+"template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }} {{ if .Working.Changed }} {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }} {{ if .Staging.Changed }} {{ .Staging.String }}{{ end }} {{ if gt .StashCount 0 }} {{ .Properties.stash_icon }}{{ .StashCount }}{{ end }}",
           "foreground": "p:bg0",
           "powerline_symbol": "\ue0b0",
           "background": "p:green",

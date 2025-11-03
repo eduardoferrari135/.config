@@ -1,9 +1,6 @@
 return {
 	{
 		"sainnhe/gruvbox-material",
-		-- config = function()
-		-- 	vim.g.gruvbox_material_foreground = "mix"
-		-- end,
 	},
 	{
 		"shaunsingh/nord.nvim",
@@ -20,12 +17,16 @@ return {
 	{
 		"catppuccin/nvim",
 	},
+	{
+		"EdenEast/nightfox.nvim",
+	},
 
 	-- Configure LazyVim to load gruvbox
 	{
 		"LazyVim/LazyVim",
 		opts = {
 			colorscheme = "catppuccin-macchiato",
+			-- colorscheme = "nightfox",
 		},
 	},
 }

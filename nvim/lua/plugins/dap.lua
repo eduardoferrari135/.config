@@ -2,11 +2,13 @@ return {
 	"mfussenegger/nvim-dap",
 	dependencies = {
 		"wojciech-kulik/xcodebuild.nvim",
+		"mfussenegger/nvim-dap-python",
 	},
 	config = function()
 		-- DAP (Debugger) integration setup
 		local xcodebuild_dap = require("xcodebuild.integrations.dap")
 		local dap = require("dap")
+		require("dap-python").setup("python3")
 
 		local lldb_path = os.getenv("HOME") .. "/tools/codelldb-darwin-arm64/extension/adapter/codelldb"
 		dap.adapters.codelldb = {
