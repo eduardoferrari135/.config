@@ -10,13 +10,17 @@ return {
 		local dap = require("dap")
 		require("dap-python").setup("python3")
 
-		local lldb_path = os.getenv("HOME") .. "/tools/codelldb-darwin-arm64/extension/adapter/codelldb"
+		local codelldb_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb"
+		local liblldb_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/lldb/lib/liblldb.dylib"
 		dap.adapters.codelldb = {
 			type = "server",
 			port = "${port}",
 			executable = {
-				command = lldb_path,
+				command = codelldb_path,
 				args = { "--port", "${port}" },
+			},
+			env = {
+				LIBLLDB_PATH = liblldb_path,
 			},
 		}
 
@@ -38,7 +42,7 @@ return {
 		-- You can reuse the same config for C and Rust
 		dap.configurations.c = dap.configurations.cpp
 		dap.configurations.rust = dap.configurations.cpp
-		xcodebuild_dap.setup(lldb_path)
+		xcodebuild_dap.setup()
 
 		-- Your keymaps for debugging are perfect and remain the same
 		vim.keymap.set("n", "<leader>xcdd", xcodebuild_dap.build_and_debug, { desc = "Build & Debug" })

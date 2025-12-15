@@ -23,4 +23,7 @@ return {
 		},
 		indent = { enable = true },
 	},
+	config = function()
+		require("nvim-treesitter.install").prefer_git = true
+	end,
 }

@@ -9,6 +9,9 @@ return {
 				ruff = {},
 				pyright = {},
 				gopls = {},
+				ts_ls = {},
+				sqruff = {},
+				emmet_language_server = {},
 				sourcekit = {
 					cmd = {
 						"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp",
@@ -33,7 +36,7 @@ return {
 				},
 			},
 			inlay_hints = {
-				enabled = true,
+				enabled = false,
 			},
 		},
 	},

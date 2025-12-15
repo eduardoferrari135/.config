@@ -18,3 +18,6 @@ vim.keymap.set("n", "<leader>xcq", "<cmd>Telescope quickfix<cr>", { desc = "Show
 vim.keymap.set("n", "<Tab>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 vim.keymap.set("n", "<S-Tab>", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<leader>k", "<cmd>bdelete<cr>", { desc = "Close buffer" })
+
+-- Dadbod
+vim.keymap.set("n", "<leader>da", "<cmd>DBUIToggle<cr>", { desc = "Toggle DBUI" })
