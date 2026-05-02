@@ -73,6 +73,15 @@
           "value": "20"
         }
       ]
+    },
+    {
+      "name": "autoFillReplySubject",
+      "label": "Auto-fill subject when replying",
+      "title": "Auto-fill Reply Subject",
+      "description": "Automatically fill the subject field with 'Re: ' followed by the original email's subject when using Reply or Reply All.",
+      "type": "checkbox",
+      "default": false,
+      "required": false
     }
   ],
   "commands": [
@@ -237,6 +246,22 @@
       "confirmation": false
     },
     {
+      "name": "list-account-emails",
+      "title": "List Account Emails",
+      "description": "List all available email addresses from the user's mail accounts.",
+      "input": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Optional filter query to search for specific email addresses."
+          }
+        },
+        "required": []
+      },
+      "confirmation": false
+    },
+    {
       "name": "send-email",
       "title": "Send Email",
       "description": "Send an email with Apple Mail.",
@@ -263,6 +288,10 @@
               "type": "string"
             },
             "description": "The recipient email addresses to BCC.\n\nThis must be a valid email address from the account's address book\nwhich you must get using the `list-addresses` tool."
+          },
+          "from": {
+            "type": "string",
+            "description": "The email address to send from.\n\nThis must be one of the user's email addresses from their accounts.\nYou can get available email addresses using the `list-account-emails` tool.\nIf not provided, the default account's first email address will be used."
           },
           "subject": {
             "type": "string",
@@ -306,7 +335,7 @@
     "javascript-time-ago": "^2.5.10",
     "json2md": "^1.13.0",
     "juice": "^9.1.0",
-    "mailparser": "^3.7.2",
+    "mailparser": "^3.9.4",
     "mime-types": "^2.1.35",
     "plist": "^3.1.0",
     "string-strip-html": "^13.4.12",
@@ -317,7 +346,7 @@
     "@raycast/eslint-config": "^1.0.8",
     "@types/got": "^9.6.12",
     "@types/json2md": "^1.5.4",
-    "@types/mailparser": "^3.4.4",
+    "@types/mailparser": "^3.4.6",
     "@types/mime-types": "^2.1.4",
     "@types/plist": "^3.0.5",
     "@types/turndown": "^5.0.5",

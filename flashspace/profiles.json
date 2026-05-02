@@ -1,0 +1,129 @@
+{
+  "profiles" : [
+    {
+      "id" : "AF34CEC4-8F7B-4430-827B-3F7D341DC510",
+      "name" : "Default",
+      "workspaces" : [
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.mitchellh.ghostty",
+              "iconPath" : "/Applications/Ghostty.app/Contents/Resources/Ghostty.icns",
+              "name" : "Ghostty"
+            }
+          ],
+          "assignAppShortcut" : "opt+shift+1",
+          "display" : "Built-in Retina Display",
+          "id" : "74D90F28-BDDD-4C29-8FF1-3DF1B9A5AA1F",
+          "name" : "Coding",
+          "openAppsOnActivation" : true,
+          "shortcut" : "opt+1",
+          "symbolIconName" : "cpu"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "company.thebrowser.Browser",
+              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
+              "name" : "Arc"
+            }
+          ],
+          "assignAppShortcut" : "opt+shift+2",
+          "display" : "Built-in Retina Display",
+          "id" : "097EF68C-A763-41EA-831B-90D294DF4CD9",
+          "name" : "Browser",
+          "openAppsOnActivation" : true,
+          "shortcut" : "opt+2",
+          "symbolIconName" : "compass.drawing"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "net.whatsapp.WhatsApp",
+              "iconPath" : "/Applications/WhatsApp.app/Contents/Resources/AppIconCatalystRelease.icns",
+              "name" : "‎WhatsApp"
+            }
+          ],
+          "assignAppShortcut" : "opt+shift+3",
+          "display" : "Built-in Retina Display",
+          "id" : "A8CB4A94-FC4D-4793-8ECF-F2B31C33AA67",
+          "name" : "Messages",
+          "openAppsOnActivation" : true,
+          "shortcut" : "opt+3",
+          "symbolIconName" : "bubble.fill"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.spotify.client",
+              "iconPath" : "/Applications/Spotify.app/Contents/Resources/AppIcon.icns",
+              "name" : "Spotify"
+            }
+          ],
+          "assignAppShortcut" : "opt+shift+4",
+          "display" : "Built-in Retina Display",
+          "id" : "2849AB59-DD49-4243-A2EE-475B5DFF195A",
+          "name" : "Music",
+          "openAppsOnActivation" : true,
+          "shortcut" : "opt+4",
+          "symbolIconName" : "music.note"
+        },
+        {
+          "apps" : [
+
+          ],
+          "assignAppShortcut" : "opt+shift+5",
+          "display" : "Built-in Retina Display",
+          "id" : "1F59AFCC-8C56-4407-AD9B-1DBFDD6ABFC9",
+          "name" : "5",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+5"
+        },
+        {
+          "apps" : [
+
+          ],
+          "assignAppShortcut" : "opt+shift+6",
+          "display" : "Built-in Retina Display",
+          "id" : "F934ED63-EB51-42E0-ADFF-CA8A8EF9CA8A",
+          "name" : "6",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+6"
+        },
+        {
+          "apps" : [
+
+          ],
+          "assignAppShortcut" : "opt+shift+7",
+          "display" : "Built-in Retina Display",
+          "id" : "0F7E0E16-3082-49BC-9D31-906C2D627040",
+          "name" : "7",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+7"
+        },
+        {
+          "apps" : [
+
+          ],
+          "assignAppShortcut" : "opt+shift+8",
+          "display" : "Built-in Retina Display",
+          "id" : "7538CEFC-4B09-43FC-8CF5-332A716C5979",
+          "name" : "8",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+8"
+        },
+        {
+          "apps" : [
+
+          ],
+          "assignAppShortcut" : "opt+shift+9",
+          "display" : "Built-in Retina Display",
+          "id" : "93E722C4-FEED-426B-B5AA-09AA457FCC8A",
+          "name" : "9",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+9"
+        }
+      ]
+    }
+  ]
+}
